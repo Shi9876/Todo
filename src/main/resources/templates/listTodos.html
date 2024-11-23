@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <link href="" rel="stylesheet">
+    <title>List Todos page</title>
+</head>
+<body>
+<div>Welcome <span th:text="${name}"></span></div>
+<hr>
+<h1>Your Todos</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Description</th>
+        <th>Target</th>
+        <th>Is Done?</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="todo: ${todos}">
+        <td th:text="${todo.id}"></td>
+        <td th:text="${todo.description}"></td>
+        <td th:text="${todo.targetDate}"></td>
+        <td th:text="${todo.done}"></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
+
+
+<!--Notes:
+ 1. welcome.html not printing the ${name}. The reason is that whenever we put something in a model by default, it's only available for the scope of that request.
+ 2. If we want it to live longer, then we need to put it in something called session.
+ 3. How do we put values in this session? - by using an annotation called at session attributes.-->
