@@ -4,6 +4,7 @@
   <title>Home</title>
 </head>
 <body>
+<div class="container">     <!--bootstrap class: container(for the whole body content)-->
 <h1>Welcome to Login Page!</h1>
 <div><span th:text="${errorMessage}"></span></div>
 <form method="post">      <!--using post we sent information into form data, not passing name and password with the url-->
@@ -11,5 +12,6 @@
   Password:<input type="password" name="password">
   <input type="submit">
 </form>
+</div>
 </body>
 </html>
