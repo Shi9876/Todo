@@ -19,9 +19,9 @@ public class Todo {
     @Size(min=10, message="Enter atleast 10 characters")  //annotation for validation on description size
     private String description;
     private LocalDate targetDate;
-    private boolean done;
+    private String done = "Yes";
 
-    public Todo(int id, String username, String description, LocalDate targetDate, boolean done) {
+    public Todo(int id, String username, String description, LocalDate targetDate, String done) {
         this.id = id;
         this.username = username;
         this.description = description;
@@ -61,11 +61,11 @@ public class Todo {
         this.targetDate = targetDate;
     }
 
-    public boolean isDone() {
+    public String isDone() {
         return done;
     }
 
-    public void setDone(boolean done) {
+    public void setDone(String done) {
         this.done = done;
     }
 
